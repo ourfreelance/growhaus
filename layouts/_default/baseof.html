@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24 lg:scroll-pt-32">
+  
+<head>
+  {{- partial "head.html" . -}}
+</head>
+
+<body class="font-inter bg-primary-white">
+
+    {{- partial "header.html" . -}}
+    {{- block "main" . }}{{- end }}
+    {{- partial "footer.html" . -}} 
+</body>
+</html>

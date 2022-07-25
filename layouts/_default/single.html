@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+  <header class="bg-secondary pt-24 lg:pt-28 pb-14 lg:pb-16 mb-10 px-5 lg:px-10">
+    <div class="max-w-screen-lg mx-auto">  
+      <div class="mb-5">
+        <h1 class="text-[36px] lg:text-[64px] leading-normal font-bold">{{.Title}}</h1>
+      </div>
+      <div>
+        <a href="/">Home</a> <span class="px-3">/</span> <a href="#" class="text-primary">{{.Title}}</a>
+      </div>
+    </div>
+  </header> 
+  
+
+  <!-- if content have thumbnail -->
+  {{ if isset .Params "thumbnail"}}
+    <div class="max-w-screen-lg mx-auto">
+      <img
+        id="thumbnail"
+        class="rounded w-full"
+        src="{{ .Params.thumbnail }}" 
+        alt="{{.Title}}"
+      />
+    </div>
+  {{end}}
+
+  <main class="prose mt-10 !max-w-screen-lg mx-auto prose-headings:text-white text-gray px-5 lg:px-0">
+    {{ .Content | safeHTML }}
+  </main>
+
+{{end}}

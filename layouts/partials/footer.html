@@ -1,0 +1,60 @@
+<!-- <script>
+  // Toggle Menu
+  const toggleMenu = document.querySelector('.toggle-menu')
+  const menu = document.querySelector('.menu')
+  toggleMenu.addEventListener('click', (e) => {
+    menu.classList.toggle('translate-y-[-150%]')
+    navbar.classList.toggle('!bg-secondary')
+  })
+</script> -->
+
+<script type="module">
+  import "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+
+  const swiper = new Swiper('.swiper-form', {
+    allowTouchMove: false,
+    slidesPerView: 1,
+    navigation: {
+      prevEl: '.swiper-prev-slide',
+      nextEl: '.swiper-next-slide',
+      disabledClass: 'text-gray active:bg-transparent hover:opacity-100',
+      lockClass: 'hidden'
+    },
+    pagination: {
+      el: '.swiper-pagination-form',
+      bulletClass: 'swiper-pagination-form-bullet',
+      bulletActiveClass: 'swiper-pagination-form-bullet-active',
+			clickable: true,
+      renderBullet: function (index, className) {
+        return index > 0 ? `<button class="${className}"> Step 1 - ${index} </button>` : ' '
+      },
+      on: {
+        paginationUpdate(swiper) {
+          console.log(swiper);
+        }
+      }
+    },
+  })
+
+  const swiperLength = swiper.slides.length - 1
+
+  swiper.on('paginationUpdate', (swiper) => {
+    const paginationForm = document.querySelector('.swiper-pagination-form')
+    const paginations = document.querySelectorAll('.swiper-pagination-form-bullet')
+    console.log(swiper.activeIndex === swiperLength);
+    if(swiper.activeIndex === swiperLength) {
+      console.log('ok');
+      paginationForm.style.opacity = '0'
+    } else {
+      console.log('no ok');
+      paginationForm.style.opacity = '100'
+    }
+    paginations.forEach((page, i) => {
+      if((i - 1) < swiper.activeIndex ) {
+        page.classList.add('swiper-pagination-form-bullet-active')
+      }
+    })
+  })
+
+
+</script>

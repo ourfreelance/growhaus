@@ -1,0 +1,33 @@
+baseURL = "https://fiverr-growhaus.netlify.app"
+languageCode = "id-ID"
+defaultContentLanguage = "id"
+title = "Growhaus"
+summaryLength = 10
+RelativeURLs = false
+CanonifyURLs = true
+enableRobotsTXT = true
+enableEmoji = true
+paginate = 8
+enableGitInfo = true
+pygmentsCodefences = true 
+pygmentsUseClasses = true
+
+[params]
+  author = "John Doe"
+  site_name = "Growhaus"
+  description = "Growhaus description"
+  locale = "en-US"
+  type = "website"
+
+  primary_color = "#009A16" # Green Color
+
+  landing_title = "Online Music Collaboration Platform"
+  landing_description = "Lorem ispum dolor si amet jue viole grace"
+  background_image = "/assets/images/bg.webp"
+
+  learn_more_url = "#"
+  try_now_url = "#"
+
+  about = "Growhaus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim, lectus lorem scelerisque enim. Tellus ante placerat metus non, mattis gravida odio sed. Pellentesque lobortis dui neque nec potenti. Pretium amet sed posuere curabitur adipiscing dignissim. Lacinia odio congue nulla et vitae in quis eget non. Augue lacus at arcu vulputate eget tincidunt mi, potenti odio. Duis rhoncus urna neque dui in cursus eu gravida adipiscing."
+
+

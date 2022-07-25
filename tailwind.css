@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .menu {
+    @apply 
+      flex flex-col lg:flex-row 
+      items-start lg:items-center 
+      gap-5 lg:gap-9 
+      px-5 py-7 lg:p-0 
+      absolute lg:static 
+      top-16 inset-x-0 
+      bg-secondary lg:bg-transparent 
+      font-medium
+      transition lg:transition-none duration-500 
+      z-30
+  }
+}
+
+.swiper-pagination-form {
+	@apply grid grid-cols-10 gap-10 max-w-screen-lg mx-auto pt-40 pb-20
+}
+.swiper-pagination-form-bullet {
+	@apply relative text-xs whitespace-nowrap text-center
+}
+.swiper-pagination-form-bullet:before {
+	content: "";
+	@apply absolute top-full left-0 mt-2 bg-primary-gray w-full h-2 rounded-full
+}
+
+.swiper-pagination-form-bullet-active:before {
+	@apply bg-primary
+}
