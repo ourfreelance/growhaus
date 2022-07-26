@@ -17,7 +17,7 @@
     navigation: {
       prevEl: '.swiper-prev-slide',
       nextEl: '.swiper-next-slide',
-      disabledClass: 'text-gray active:bg-transparent hover:opacity-100',
+      disabledClass: 'navigation-disabled',
       lockClass: 'hidden'
     },
     pagination: {
@@ -35,18 +35,59 @@
       }
     },
   })
+  
+  // enter on input to next slide
+  const formInputs = document.querySelectorAll('.form-input')
+  formInputs.forEach(input => {
+    input.addEventListener('keyup', e => {
+      if(e.key == 'Enter') {
+       swiper.slideNext()
+      }
+    })
+  })
 
+  swiper.on('slideChange', function () {
+
+    // auto focus input after slide change
+    const activeSlide = swiper.slides[swiper.activeIndex]
+    const activeSlideInput = activeSlide?.querySelector('.form-input')
+    const slideNextButton = document.querySelector('.swiper-navigation-form.swiper-next-slide')
+    // setTimeout(() => {
+    //   activeSlideInput?.focus()
+    // }, 300);
+
+    // if input no have value, disabled navigation
+    if(activeSlideInput) {
+      if(activeSlideInput?.value) {
+        navigationActive(true)
+      } else {
+        navigationActive(false)
+      }
+      activeSlideInput?.addEventListener('input', (e) => {
+        if(e.target.value) {
+          navigationActive(true)
+        } else {
+          navigationActive(false)
+        }
+      })
+    }
+    function navigationActive(status) {
+      slideNextButton.classList[status ? 'remove' : 'add']('navigation-disabled')
+      swiper.allowSlideNext = status
+    }
+
+  });
+
+  
+  // pagination style logic
+  const paginationForm = document.querySelector('.swiper-pagination-form')
+  const paginations = document.querySelectorAll('.swiper-pagination-form-bullet')
   const swiperLength = swiper.slides.length - 1
 
   swiper.on('paginationUpdate', (swiper) => {
-    const paginationForm = document.querySelector('.swiper-pagination-form')
-    const paginations = document.querySelectorAll('.swiper-pagination-form-bullet')
-    console.log(swiper.activeIndex === swiperLength);
     if(swiper.activeIndex === swiperLength) {
-      console.log('ok');
       paginationForm.style.opacity = '0'
     } else {
-      console.log('no ok');
       paginationForm.style.opacity = '100'
     }
     paginations.forEach((page, i) => {

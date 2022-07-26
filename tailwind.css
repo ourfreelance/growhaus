@@ -20,7 +20,7 @@
 }
 
 .swiper-pagination-form {
-	@apply grid grid-cols-10 gap-10 max-w-screen-lg mx-auto pt-40 pb-20
+	@apply grid grid-cols-10 gap-10 max-w-screen-lg mx-auto py-20
 }
 .swiper-pagination-form-bullet {
 	@apply relative text-xs whitespace-nowrap text-center
@@ -29,7 +29,14 @@
 	content: "";
 	@apply absolute top-full left-0 mt-2 bg-primary-gray w-full h-2 rounded-full
 }
-
 .swiper-pagination-form-bullet-active:before {
 	@apply bg-primary
+}
+
+.navigation-disabled {
+  @apply !text-primary-gray active:!bg-transparent hover:!opacity-100
+}
+
+.swiper-navigation-form {
+  @apply absolute top-1/2 -translate-y-1/2 z-50 hover:opacity-90 active:bg-secondary/[0.02] rounded-full overflow-hidden p-2 transition text-primary
 }
