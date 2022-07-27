@@ -3,7 +3,9 @@
 module.exports = {
   content: [
     "./content/**/*.html",
-    "./layouts/**/*.html"
+    "./layouts/**/*.html",
+    "./static/**/*.js",
+
   ],
   theme: {
     container: {

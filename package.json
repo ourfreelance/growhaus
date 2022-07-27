@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "growhaus description",
   "scripts": {
+    "dev": "hugo server --path-warnings --ignoreCache --disableFastRender --renderToDisk --cleanDestinationDir",
     "watch": "npx tailwindcss -i ./tailwind.css -o ./static/assets/css/styles.css --watch --minify",
     "commit": "git add . && git commit -m"
   },

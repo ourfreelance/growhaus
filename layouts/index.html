@@ -5,22 +5,22 @@
   <!-- Slider main container -->
   <section class="swiper swiper-form">
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper !pt-[16rem]">
+    <div class="swiper-wrapper">
 
       <!-- Slide 1 - Welcome -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h1 class="text-[64px] font-bold text-center leading-tight mb-8">
+          <h1 class="text-2xl md:text-[64px] font-medium md:font-bold text-center leading-tight mb-5 md:mb-8">
             Welcome To The <span class="text-primary">Growhaus</span> Business Audit
           </h1>
-          <button class="swiper-next-slide text-white bg-primary hover:opacity-90 transition px-12 py-5 rounded-xl text-2xl font-bold">
+          <button class="swiper-next-slide text-white bg-primary hover:opacity-90 transition px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-bold">
             Get Started
           </button>
         </div>
       </div>
 
       <!-- Slide 2 - Email Address -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Your Email Address"
           "name" "emailAddress"
@@ -30,7 +30,7 @@
       </div>
 
       <!-- Slide 2 - Your Name -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Your Name"
           "name" "entry.177899891"
@@ -40,7 +40,7 @@
       </div>
 
       <!-- Slide 3 - Store URL -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Store URL"
           "name" "entry.87908930"
@@ -50,26 +50,26 @@
       </div>
 
       <!-- Slide 4 - Login Shopify -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h2 class="text-4xl font-semibold text-center leading-tight mb-8">
+          <h2 class="text-xl md:text-4xl font-medium md:font-semibold text-center leading-tight mb-5 md:mb-8">
             please login to shopify for the following metrics
           </h2>
-          <div class="mb-8 relative">
+          <div class="mb-5 md:mb-8 relative px-8">
             <img class="rounded-md" src="/assets/images/video.png" alt="">
             <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
               <img src="/assets/images/btn-play.svg" alt="">
             </div>
           </div>
 
-          <a href="#" class="!text-white bg-primary px-12 py-5 rounded-xl text-2xl font-bold">
+          <a href="#" class="!text-white bg-primary px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-medium md:font-bold">
             Login
           </a>
         </div>
       </div>
 
       <!-- Slide 5 - Total Revenue -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" " Total Revenue"
           "name" "entry.1591179306"
@@ -79,7 +79,7 @@
       </div>
 
       <!-- Slide 6 - Total Adspend -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Total Adspend"
           "name" "entry.1006791840"
@@ -89,7 +89,7 @@
       </div>
 
       <!-- Slide 7 - Sessions -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Sessions"
           "name" "entry.1168260182"
@@ -99,7 +99,7 @@
       </div>
 
       <!-- Slide 8 - Added to cart -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Add to Chart"
           "name" "entry.745973099"
@@ -111,7 +111,7 @@
 
 
       <!-- Slide 9 - Reached Checkout -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Reached Checkout"
           "name" "entry.1531030102"
@@ -121,7 +121,7 @@
       </div>
 
       <!-- Slide 10 - Sessions Converted -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Sessions Converted"
           "name" "entry.843800738"
@@ -131,7 +131,7 @@
       </div>
 
       <!-- Slide 11 - Returning Customer Rate -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Returning Customer Rate"
           "name" "entry.173864781"
@@ -141,26 +141,26 @@
       </div>
 
       <!-- Slide 12 - Login Shopify -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h2 class="text-4xl font-semibold text-center leading-tight mb-8">
+          <h2 class="text-2xl md:text-4xl font-medium md:font-semibold text-center leading-tight mb-8">
             Please login to klaviyo for the next questions
           </h2>
-          <div class="mb-8 relative">
+          <div class="mb-5 md:mb-8 relative px-8">
             <img class="rounded-md" src="/assets/images/video.png" alt="">
             <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
               <img src="/assets/images/btn-play.svg" alt="">
             </div>
           </div>
 
-          <a href="#" class="!text-white bg-primary px-12 py-5 rounded-xl text-2xl font-bold">
+          <a href="#" class="!text-white bg-primary px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-medium md:font-bold">
             Login
           </a>
         </div>
       </div>
 
       <!-- Slide 13 - Revenue from Klaviyo -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Revenue from Klaviyo"
           "name" "entry.1498452875"
@@ -170,7 +170,7 @@
       </div>
 
       <!-- Slide 14 - Revenue from Flows   -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Revenue from Flows"
           "name" "entry.754883273"
@@ -180,7 +180,7 @@
       </div>
 
       <!-- Slide 15 - Revenue from Campaigns -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Revenue from Campaigns"
           "name" "entry.867833551"
@@ -190,7 +190,7 @@
       </div>
 
       <!-- Slide 16 - Email Revenue -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "Email Revenue"
           "name" "entry.1764438909"
@@ -200,7 +200,7 @@
       </div>
 
       <!-- Slide 17 - SMS Revenue -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         {{ partial "components/label-input.html" (dict
           "title" "SMS Revenue"
           "name" "entry.475474516"
@@ -210,9 +210,9 @@
       </div>
 
       <!-- Slide 18 - Login Shopify -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h2 class="text-4xl font-semibold text-center leading-tight mb-8">
+          <h2 class="text-2xl md:text-4xl font-medium md:font-semibold text-center leading-tight mb-8">
             Please select signup forms in klaviyo
           </h2>
           <div class="mb-8 relative">
@@ -229,7 +229,7 @@
       </div>
 
       <!-- Slide 19 - Please Your Rating -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
           <label class="text-[64px] font-bold text-center leading-tight mb-8 text-primary-black">
             Please Your Rating
@@ -252,7 +252,7 @@
       </div>
 
       <!-- Slide 19 - Submit Your Form -->
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
           <h2 class="text-[64px] font-bold text-center leading-tight mb-8">
             Submit Your Form
@@ -263,38 +263,32 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
         <div class="flex flex-col justify-center items-center max-w-screen-xl mx-auto text-black">
-          <h1 class="text-[64px] font-bold text-center leading-tight mb-8">
+          <h1 class="text-2xl md:text-[64px] font-medium md:font-bold text-center leading-tight mb-5 md:mb-8">
             Thank you for submitting your metrics for a store audit, the <span class="text-primary">Growhaus</span> team
             will be in contact shortly
           </h1>
-          <a href="/" class="text-white bg-primary hover:opacity-90 transition px-12 py-5 rounded-xl text-2xl font-bold no-underline">
+          <a href="/" class="text-white bg-primary hover:opacity-90 transition px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-bold no-underline">
             Back to home
           </a>
         </div>
       </div>
-
     </div>
 
-    <div class="swiper-pagination-form"></div>
+    {{ partial "components/slide-navigation.html" (dict "type" "desktop") }}
 
-    <button class="swiper-navigation-form swiper-prev-slide left-12">
-      <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M56.2126 8.58901C57.1968 9.57353 57.7497 10.9086 57.7497 12.3008C57.7497 13.6929 57.1968 15.028 56.2126 16.0125L30.2251 42L56.2126 67.9875C57.1689 68.9777 57.6981 70.3038 57.6861 71.6804C57.6742 73.0569 57.1221 74.3737 56.1487 75.3471C55.1753 76.3205 53.8585 76.8726 52.482 76.8846C51.1054 76.8965 49.7793 76.3673 48.7891 75.411L19.0899 45.7118C18.1056 44.7272 17.5527 43.3921 17.5527 42C17.5527 40.6079 18.1056 39.2728 19.0899 38.2883L48.7891 8.58901C49.7736 7.60479 51.1088 7.05188 52.5009 7.05188C53.893 7.05188 55.2281 7.60479 56.2126 8.58901Z"
-          fill="currentColor" />
-      </svg>
-    </button>
-    <button class="swiper-navigation-form swiper-next-slide right-12">
-      <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M27.7882 8.58901C26.804 9.57353 26.2511 10.9086 26.2511 12.3008C26.2511 13.6929 26.804 15.028 27.7882 16.0125L53.7757 42L27.7882 67.9875C26.8319 68.9777 26.3027 70.3038 26.3147 71.6804C26.3267 73.0569 26.8788 74.3737 27.8522 75.3471C28.8256 76.3205 30.1424 76.8726 31.5189 76.8846C32.8954 76.8965 34.2216 76.3673 35.2117 75.411L64.911 45.7118C65.8952 44.7272 66.4481 43.3921 66.4481 42C66.4481 40.6079 65.8952 39.2728 64.911 38.2883L35.2117 8.58901C34.2272 7.60479 32.8921 7.05188 31.5 7.05188C30.1079 7.05188 28.7728 7.60479 27.7882 8.58901Z"
-          fill="currentColor" />
-      </svg>
-    </button>
-
+    <div class="fixed bottom-0 left-0 w-full  z-50">
+      <div class="w-full flex items-center justify-center bg-primary-white"> 
+        {{ partial "components/slide-navigation.html" (dict "type" "mobile") }}
+      </div>
+      <div class="swiper-pagination-form max-w-screen-lg mx-auto bg-primary-white"></div>
+    </div>
   </section>
+
+  
 </form>
+
+
 
 {{end}}

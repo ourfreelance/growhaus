@@ -20,14 +20,16 @@
 }
 
 .swiper-pagination-form {
-	@apply grid grid-cols-10 gap-10 max-w-screen-lg mx-auto py-20
+	@apply grid grid-cols-8 md:grid-cols-10 gap-5 md:gap-10 max-w-screen-lg mx-auto py-5 md:pb-20 px-5 md:px-0
 }
 .swiper-pagination-form-bullet {
-	@apply relative text-xs whitespace-nowrap text-center pb-3.5
+	@apply relative text-xs whitespace-nowrap text-center md:pb-3.5 h-9 w-9 md:w-auto border-2 md:border-none border-primary-gray rounded-full
 }
 .swiper-pagination-form-bullet:before {
-	content: "";
-	@apply absolute bottom-0 left-0 bg-primary-gray w-full h-2 rounded-full
+	@apply content-none md:content-[''] absolute bottom-0 left-0 bg-primary-gray w-full h-2 rounded-full
+}
+.swiper-pagination-form-bullet-active {
+	@apply bg-primary md:bg-transparent text-white md:text-black border-primary
 }
 .swiper-pagination-form-bullet-active:before {
 	@apply bg-primary
@@ -37,6 +39,9 @@
   @apply !text-primary-gray active:!bg-transparent hover:!opacity-100
 }
 
-.swiper-navigation-form {
+.swiper-navigation-form.desktop {
   @apply absolute top-1/2 -translate-y-1/2 z-50 hover:opacity-90 active:bg-secondary/[0.02] rounded-full overflow-hidden p-2 text-primary
+}
+.swiper-navigation-form.mobile {
+  @apply hover:opacity-90 active:bg-secondary/[0.02] rounded-full overflow-hidden p-2 text-primary
 }

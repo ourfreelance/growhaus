@@ -14,10 +14,14 @@ const swiper = new Swiper('.swiper-form', {
     el: '.swiper-pagination-form',
     bulletClass: 'swiper-pagination-form-bullet',
     bulletActiveClass: 'swiper-pagination-form-bullet-active',
+    clickable: true,
     renderBullet: function (index, className) {
       return index === 0 || index === this.slides.length - 1
-        ? `<button class="${className} hidden"></button>`
-        : `<button class="${className}"> Step ${index} - ${this.slides.length  - 2} </button>`
+        ? `<button type="button" class="${className} hidden"></button>`
+        : `<button type="button" class="${className}">
+              <span class="hidden md:block">Step ${index} - ${this.slides.length  - 2}</span>
+              <span class="block md:hidden">${index}</span>
+            </button>`
     },
   },
 })
