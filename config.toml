@@ -138,7 +138,7 @@ pygmentsUseClasses = true
   title = "Please Your Rating"
   name = "entry.272409792"
   type = "radio"
-  values = ['This is very helpfull', 'Good', 'Not helpful']
+  values = ['This is very helpfull', 'Very Good', 'Good', 'Not helpful']
 [[params.slides]]
   slideType = "view"
   view = "slide-views/submit-view.html"
