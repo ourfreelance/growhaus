@@ -1,294 +1,49 @@
 {{ define "main" }}
+  <iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
+  <form id="form" class="h-screen relative" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" target="hidden_iframe">
 
-<iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
-<form id="form" class="h-screen relative" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" method="POST" target="hidden_iframe">
-  <!-- Slider main container -->
-  <section class="swiper swiper-form">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
+    <!-- Slider main container -->
+    <section class="swiper swiper-form">
 
-      <!-- Slide 1 - Welcome -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h1 class="text-2xl md:text-[64px] font-medium md:font-bold text-center leading-tight mb-5 md:mb-8">
-            Welcome To The <span class="text-primary">Growhaus</span> Business Audit
-          </h1>
-          <button class="swiper-next-slide text-white bg-primary hover:opacity-90 transition px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-bold">
-            Get Started
-          </button>
-        </div>
-      </div>
-
-      <!-- Slide 2 - Email Address -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Your Email Address"
-          "name" "emailAddress"
-          "type" "email"
-          "placeholder" "example@gmail.com"
-        )}}
-      </div>
-
-      <!-- Slide 2 - Your Name -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Your Name"
-          "name" "entry.177899891"
-          "type" "text"
-          "placeholder" "Your name"
-        )}}
-      </div>
-
-      <!-- Slide 3 - Store URL -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Store URL"
-          "name" "entry.87908930"
-          "type" "text"
-          "placeholder" "Example: mystore.com"
-        )}}
-      </div>
-
-      <!-- Slide 4 - Login Shopify -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h2 class="text-xl md:text-4xl font-medium md:font-semibold text-center leading-tight mb-5 md:mb-8">
-            please login to shopify for the following metrics
-          </h2>
-          <div class="mb-5 md:mb-8 relative px-8">
-            <img class="rounded-md" src="/assets/images/video.png" alt="">
-            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-              <img src="/assets/images/btn-play.svg" alt="">
-            </div>
+      <div class="swiper-wrapper">
+        {{ range .Site.Params.Slides }}
+          <div class="swiper-slide !pb-[16rem] flex flex-col justify-center items-center w-full !overflow-auto !h-screen">
+            {{ if eq .slideType "input"}}
+              {{ partial "components/label-input.html" (dict
+                "title" .title 
+                "name" .name 
+                "type" .type 
+                "placeholder" .placeholder 
+              )}}
+            {{ else if eq .slideType "input-radio" }}
+              {{ partial "components/label-input-radio.html" (dict 
+                "title" .title 
+                "name" .name 
+                "type" .type 
+                "values" .values
+              )}}
+            {{ else if eq .slideType "view" }}
+              {{ partial .view }}
+            {{ end }}
           </div>
+        {{ end}}
+      </div>
 
-          <a href="#" class="!text-white bg-primary px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-medium md:font-bold">
-            Login
-          </a>
+      {{ partial "components/slide-navigation.html" (dict "type" "desktop") }}
+
+      <div class="fixed bottom-0 left-0 w-full  z-50">
+        <div class="w-full flex items-center justify-center bg-primary-white"> 
+          {{ partial "components/slide-navigation.html" (dict "type" "mobile") }}
+        </div>
+        <div class="px-0 md:px-10">
+          <div class="swiper-pagination-form max-w-screen-lg mx-auto bg-primary-white"></div>
         </div>
       </div>
+    </section>  
 
-      <!-- Slide 5 - Total Revenue -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" " Total Revenue"
-          "name" "entry.1591179306"
-          "type" "text"
-          "placeholder" "Your Answer"
-        )}}
-      </div>
-
-      <!-- Slide 6 - Total Adspend -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Total Adspend"
-          "name" "entry.1006791840"
-          "type" "text"
-          "placeholder" "Your Answer"
-        )}}
-      </div>
-
-      <!-- Slide 7 - Sessions -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Sessions"
-          "name" "entry.1168260182"
-          "type" "text"
-          "placeholder" "Your Answer"
-        )}}
-      </div>
-
-      <!-- Slide 8 - Added to cart -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Add to Chart"
-          "name" "entry.745973099"
-          "type" "text"
-          "placeholder" "Your Answer"
-        )}}
-      </div>
+  </form>
 
 
-
-      <!-- Slide 9 - Reached Checkout -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Reached Checkout"
-          "name" "entry.1531030102"
-          "type" "text"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 10 - Sessions Converted -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Sessions Converted"
-          "name" "entry.843800738"
-          "type" "text"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 11 - Returning Customer Rate -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Returning Customer Rate"
-          "name" "entry.173864781"
-          "type" "text"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 12 - Login Shopify -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h2 class="text-2xl md:text-4xl font-medium md:font-semibold text-center leading-tight mb-8">
-            Please login to klaviyo for the next questions
-          </h2>
-          <div class="mb-5 md:mb-8 relative px-8">
-            <img class="rounded-md" src="/assets/images/video.png" alt="">
-            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-              <img src="/assets/images/btn-play.svg" alt="">
-            </div>
-          </div>
-
-          <a href="#" class="!text-white bg-primary px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-medium md:font-bold">
-            Login
-          </a>
-        </div>
-      </div>
-
-      <!-- Slide 13 - Revenue from Klaviyo -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Revenue from Klaviyo"
-          "name" "entry.1498452875"
-          "type" "number"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 14 - Revenue from Flows   -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Revenue from Flows"
-          "name" "entry.754883273"
-          "type" "number"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 15 - Revenue from Campaigns -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Revenue from Campaigns"
-          "name" "entry.867833551"
-          "type" "number"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 16 - Email Revenue -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "Email Revenue"
-          "name" "entry.1764438909"
-          "type" "number"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 17 - SMS Revenue -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        {{ partial "components/label-input.html" (dict
-          "title" "SMS Revenue"
-          "name" "entry.475474516"
-          "type" "number"
-          "placeholder" "Your answer"
-        )}}
-      </div>
-
-      <!-- Slide 18 - Login Shopify -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h2 class="text-2xl md:text-4xl font-medium md:font-semibold text-center leading-tight mb-8">
-            Please select signup forms in klaviyo
-          </h2>
-          <div class="mb-8 relative">
-            <img class="rounded-md" src="/assets/images/video.png" alt="">
-            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-              <img src="/assets/images/btn-play.svg" alt="">
-            </div>
-          </div>
-
-          <a href="#" class="!text-white bg-primary px-12 py-5 rounded-xl text-2xl font-bold">
-            Signup
-          </a>
-        </div>
-      </div>
-
-      <!-- Slide 19 - Please Your Rating -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <label class="text-[64px] font-bold text-center leading-tight mb-8 text-primary-black">
-            Please Your Rating
-          </label>
-          <div>
-            <label label="rating-1">
-              <input id="rating-1" name="entry.272409792" type="radio" class="hidden peer" value="This is very helpfull">
-              <div class="block px-4 py-2 rounded-md bg-white border border-transparent peer-checked:border-primary">
-                This is very helpful
-              </div>
-            </label>
-            <label label="rating-1">
-              <input id="rating-1" name="entry.272409792" type="radio" class="hidden peer" value="This is very helpfull">
-              <div class="block px-4 py-2 rounded-md bg-white border border-transparent peer-checked:border-primary">
-                This is very helpful
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 19 - Submit Your Form -->
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        <div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto">
-          <h2 class="text-[64px] font-bold text-center leading-tight mb-8">
-            Submit Your Form
-          </h2>
-          <button type="submit" class="form-submit-button !text-white bg-primary px-12 py-5 rounded-xl text-2xl font-bold">
-            Submit
-          </button>
-        </div>
-      </div>
-
-      <div class="swiper-slide !pb-[16rem]  pt-32 md:!pt-48 !overflow-auto !h-screen">
-        <div class="flex flex-col justify-center items-center max-w-screen-xl mx-auto text-black">
-          <h1 class="text-2xl md:text-[64px] font-medium md:font-bold text-center leading-tight mb-5 md:mb-8">
-            Thank you for submitting your metrics for a store audit, the <span class="text-primary">Growhaus</span> team
-            will be in contact shortly
-          </h1>
-          <a href="/" class="text-white bg-primary hover:opacity-90 transition px-8 md:px-12 py-3 md:py-5 rounded-xl text-base md:text-2xl font-bold no-underline">
-            Back to home
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {{ partial "components/slide-navigation.html" (dict "type" "desktop") }}
-
-    <div class="fixed bottom-0 left-0 w-full  z-50">
-      <div class="w-full flex items-center justify-center bg-primary-white"> 
-        {{ partial "components/slide-navigation.html" (dict "type" "mobile") }}
-      </div>
-      <div class="swiper-pagination-form max-w-screen-lg mx-auto bg-primary-white"></div>
-    </div>
-  </section>
-
+  {{ partial "thanks-for-submit.html" }}
   
-</form>
-
-
-
 {{end}}

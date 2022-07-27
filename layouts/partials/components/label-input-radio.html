@@ -1,0 +1,17 @@
+<div class="flex flex-col justify-center items-center max-w-screen-lg mx-auto px-5">
+  <label class="text-2xl md:4xl lg:text-5xl xl:text-[64px] font-medium md:font-bold text-center leading-tight mb-5 md:mb-8 text-primary-black">
+    {{ .title }}
+  </label>
+  <div class="flex items-center justify-start md:justify-center gap-3 md:gap-6 flex-wrap">
+    {{ $name := .name }}
+    {{ $type := .type }}
+    {{ range $index, $value := .values }}
+      <label label="{{ $name }}-{{ $index }}" class="block cursor-pointer">
+        <input id="{{ $name }}-{{ $index }}" name="{{ $name }}" type="{{ $type }}" class="hidden peer" value="{{ $value }}" {{ if eq $index 0 }} checked {{end}}>
+        <div class="block px-4 py-2 rounded-md bg-white border border-primary-gray peer-checked:border-primary">
+          {{ $value }}
+        </div>
+      </label>
+    {{ end }}
+  </div>
+</div>

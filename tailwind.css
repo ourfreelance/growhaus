@@ -20,10 +20,10 @@
 }
 
 .swiper-pagination-form {
-	@apply grid grid-cols-8 md:grid-cols-10 gap-5 md:gap-10 max-w-screen-lg mx-auto py-5 md:pb-20 px-5 md:px-0
+	@apply grid grid-cols-8 lg:grid-cols-10 gap-5 md:gap-10 max-w-screen-lg mx-auto py-5 md:pb-20 px-5 md:px-0
 }
 .swiper-pagination-form-bullet {
-	@apply relative text-xs whitespace-nowrap text-center md:pb-3.5 h-9 w-9 md:w-auto border-2 md:border-none border-primary-gray rounded-full
+	@apply relative text-xs whitespace-nowrap text-center bg-primary-white md:bg-transparent md:pb-3.5 h-9 w-9 md:w-auto border-2 md:border-none border-primary-gray rounded-full
 }
 .swiper-pagination-form-bullet:before {
 	@apply content-none md:content-[''] absolute bottom-0 left-0 bg-primary-gray w-full h-2 rounded-full

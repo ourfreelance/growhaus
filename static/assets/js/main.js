@@ -3,7 +3,6 @@ import "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
 const swiper = new Swiper('.swiper-form', {
   allowTouchMove: false,
   slidesPerView: 1,
-  delayBetweenSlides: 700,
   navigation: {
     prevEl: '.swiper-prev-slide',
     nextEl: '.swiper-next-slide',
@@ -16,10 +15,10 @@ const swiper = new Swiper('.swiper-form', {
     bulletActiveClass: 'swiper-pagination-form-bullet-active',
     clickable: true,
     renderBullet: function (index, className) {
-      return index === 0 || index === this.slides.length - 1
+      return index === 0
         ? `<button type="button" class="${className} hidden"></button>`
         : `<button type="button" class="${className}">
-              <span class="hidden md:block">Step ${index} - ${this.slides.length  - 2}</span>
+              <span class="hidden md:block">Step ${index} - ${this.slides.length  - 1}</span>
               <span class="block md:hidden">${index}</span>
             </button>`
     },
@@ -39,7 +38,7 @@ formInputs.forEach(input => {
 const navigationForm = document.querySelectorAll('.swiper-navigation-form')
 
 function showHideNavigation() {
-  if(swiper.activeIndex === 0 || swiper.activeIndex === swiper.slides.length - 1) {
+  if(swiper.activeIndex === 0) {
     navigationForm.forEach(nav => {
       nav.style.opacity = '0'
     })
@@ -53,11 +52,13 @@ function showHideNavigation() {
 showHideNavigation()
 
 swiper.on('slideChange', function () {
+  console.log('is change!');
   showHideNavigation()
+  console.log(swiper);
   // auto focus input after slide change
   const activeSlide = swiper.slides[swiper.activeIndex]
   const activeSlideInput = activeSlide?.querySelector('.form-input')
-  const slideNextButton = document.querySelector('.swiper-navigation-form.swiper-next-slide')
+  const slideNextButtons = document.querySelectorAll('.swiper-navigation-form.swiper-next-slide')
 
   // if input no have value, disabled navigation
   if(activeSlideInput) {
@@ -73,24 +74,22 @@ swiper.on('slideChange', function () {
         navigationActive(false)
       }
     })
-  } else if(swiper.activeIndex === swiper.slides.length - 2) {
-    navigationActive(false)
   } else {
     navigationActive(true)
   }
 
   function navigationActive(status) {
-    slideNextButton.classList[status ? 'remove' : 'add']('navigation-disabled')
+    slideNextButtons.forEach(nextButton => {
+      nextButton.classList[status ? 'remove' : 'add']('navigation-disabled')
+    })
     swiper.allowSlideNext = status
   }
-
 });
 
 
 // pagination style logic
 const paginationForm = document.querySelector('.swiper-pagination-form')
 const paginations = document.querySelectorAll('.swiper-pagination-form-bullet')
-const swiperLength = swiper.slides.length - 1
 
 if(swiper.activeIndex === 0 ) {
   paginationForm.style.opacity = '0'
@@ -99,7 +98,7 @@ if(swiper.activeIndex === 0 ) {
 }
 
 swiper.on('paginationUpdate', (swiper) => {
-  if(swiper.activeIndex === 0 || swiper.activeIndex === swiperLength ) {
+  if(swiper.isBeginning) {
     paginationForm.style.opacity = '0'
   } else {
     paginationForm.style.opacity = '100'
@@ -113,8 +112,9 @@ swiper.on('paginationUpdate', (swiper) => {
 
 
 // onsubmit form
+const thanksForSubmit = document.querySelector('#thanks-for-submit')
 const formSubmitButton = document.querySelector('.form-submit-button')
+
 formSubmitButton.addEventListener('click', () => {
-  swiper.allowSlideNext = true
-  swiper.slideNext()
+  thanksForSubmit.classList.remove('!hidden')
 })
