@@ -30,11 +30,12 @@ pygmentsUseClasses = true
 
   about = "Growhaus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim, lectus lorem scelerisque enim. Tellus ante placerat metus non, mattis gravida odio sed. Pellentesque lobortis dui neque nec potenti. Pretium amet sed posuere curabitur adipiscing dignissim. Lacinia odio congue nulla et vitae in quis eget non. Augue lacus at arcu vulputate eget tincidunt mi, potenti odio. Duis rhoncus urna neque dui in cursus eu gravida adipiscing."
 
-
+### Get Started
 [[params.slides]]
   slideType = "view"
   view = "slide-views/get-started.html"
 
+### Slide 1
 [[params.slides]]
   slideType = "input"
   id = "email"
@@ -43,6 +44,7 @@ pygmentsUseClasses = true
   type = "email"
   placeholder = "example@gmail.com"
 
+### Slide 2
 [[params.slides]]
   slideType = "input"
   id = "name"
@@ -51,18 +53,21 @@ pygmentsUseClasses = true
   type = "text"
   placeholder = "Your name"
 
+### Slide 3
 [[params.slides]]
   slideType = "input"
   id = "store-url"
   title = "Store URL"
   name = "entry.87908930"
   type = "url"
-  placeholder = "Example: mystore.com"
+  placeholder = "https://mysite.com"
 
+### Slide 4
 [[params.slides]]
   slideType = "view"
   view = "slide-views/login-shopify.html"
 
+### Slide 5
 [[params.slides]]
   slideType = "input"
   id = "total-revenue"
@@ -71,6 +76,7 @@ pygmentsUseClasses = true
   type = "text"
   placeholder = "Your Answer"
 
+### Slide 6
 [[params.slides]]
   slideType = "input"
   id = "total-adspend"
@@ -78,7 +84,8 @@ pygmentsUseClasses = true
   name = "entry.1006791840"
   type = "text"
   placeholder = "Your Answer"
-  
+
+### Slide 7
 [[params.slides]]
   slideType = "input"
   id = "sessions"
@@ -87,6 +94,7 @@ pygmentsUseClasses = true
   type = "text"
   placeholder = "Your Answer"
 
+### Slide 8
 [[params.slides]]
   slideType = "input"
   id = "add-to-chart"
@@ -95,6 +103,7 @@ pygmentsUseClasses = true
   type = "text"
   placeholder = "Your Answer"
 
+### Slide 9
 [[params.slides]]
   slideType = "input"
   id = "reached-checkout"
@@ -102,7 +111,8 @@ pygmentsUseClasses = true
   name = "entry.1531030102"
   type = "text"
   placeholder = "Your answer"
-  
+
+### Slide 10
 [[params.slides]]
   slideType = "input"
   id = "sessions-converted"
@@ -111,6 +121,7 @@ pygmentsUseClasses = true
   type = "text"
   placeholder = "Your answer"
 
+### Slide 11
 [[params.slides]]
   slideType = "input"
   id = "returning-customer-rate"
@@ -119,10 +130,12 @@ pygmentsUseClasses = true
   type = "text"
   placeholder = "Your answer"
 
+### Slide 12
 [[params.slides]]
   slideType = "view"
   view = "slide-views/login-klaviyo.html"
 
+### Slide 13
 [[params.slides]]
   slideType = "input"
   id = "revenue-form-klaviyo"
@@ -131,6 +144,7 @@ pygmentsUseClasses = true
   type = "number"
   placeholder = "Your answer"
 
+### Slide 14
 [[params.slides]]
   slideType = "input"
   id = "revenue-from-flows"
@@ -139,6 +153,7 @@ pygmentsUseClasses = true
   type = "number"
   placeholder = "Your answer"
 
+### Slide 15
 [[params.slides]]
   slideType = "input"
   id = "revenue-from-campaigns"
@@ -147,6 +162,7 @@ pygmentsUseClasses = true
   type = "number"
   placeholder = "Your answer"
 
+### Slide 16
 [[params.slides]]
   slideType = "input"
   id = "email-revenue"
@@ -155,6 +171,7 @@ pygmentsUseClasses = true
   type = "number"
   placeholder = "Your answer"
 
+### Slide 17
 [[params.slides]]
   slideType = "input"
   id = "sms-revenue"
@@ -163,10 +180,12 @@ pygmentsUseClasses = true
   type = "number"
   placeholder = "Your answer"
 
+### Slide 18
 [[params.slides]]
   slideType = "view"
   view = "slide-views/signup-klaviyo.html"
 
+### Slide 19
 [[params.slides]]
   slideType = "input-radio"
   id = "your-rating"
@@ -175,6 +194,7 @@ pygmentsUseClasses = true
   type = "radio"
   values = ['This is very helpfull', 'Very Good', 'Good', 'Not helpful']
 
+### Slide 20
 [[params.slides]]
   slideType = "view"
   view = "slide-views/submit-view.html"
