@@ -1,11 +1,27 @@
-<!-- <script>
+<script type="module" src="/assets/js/main.js"></script>
+
+<script>
   // Toggle Menu
   const toggleMenu = document.querySelector('.toggle-menu')
+  const menuIcon = toggleMenu.querySelector('img')
   const menu = document.querySelector('.menu')
   toggleMenu.addEventListener('click', (e) => {
     menu.classList.toggle('translate-y-[-150%]')
-    navbar.classList.toggle('!bg-secondary')
+    menuIcon.src = menu.classList.contains('translate-y-[-150%]') ? '/assets/images/menu.svg' : '/assets/images/menu-close.svg'
   })
-</script> -->
+</script>
 
-<script type="module" src="/assets/js/main.js"></script>
+
+<!-- validation ui forms -->
+<script>
+  const formInputs = document.querySelectorAll('.form-input')
+
+  formInputs.forEach(input => {
+    input.addEventListener('blur', e => {
+
+      // check required
+      e.target.classList[e.target.value ? 'remove' : 'add']('!border-danger')
+      e.target.classList[e.target.value ? 'add' : 'remove']('!border-primary ')
+    })
+  })
+</script>

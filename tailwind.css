@@ -7,14 +7,15 @@
   .menu {
     @apply 
       flex flex-col lg:flex-row 
-      items-start lg:items-center 
+      items-center
       gap-5 lg:gap-9 
       px-5 py-7 lg:p-0 
       absolute lg:static 
-      top-16 inset-x-0 
-      bg-secondary lg:bg-transparent 
+      top-16 inset-x-0
+      text-lg md:text-base
+      bg-primary-white lg:bg-transparent
       font-medium
-      transition lg:transition-none duration-500 
+      transition lg:transition-none duration-300
       z-30
   }
 }

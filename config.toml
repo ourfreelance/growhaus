@@ -34,111 +34,131 @@ pygmentsUseClasses = true
 [[params.slides]]
   slideType = "view"
   view = "slide-views/get-started.html"
+
 [[params.slides]]
   slideType = "input"
   title = "Your Email Address"
   name = "emailAddress"
   type = "email"
   placeholder = "example@gmail.com"
+
 [[params.slides]]
   slideType = "input"
   title = "Your Name"
   name = "entry.177899891"
   type = "text"
   placeholder = "Your name"
+
 [[params.slides]]
   slideType = "input"
   title = "Store URL"
   name = "entry.87908930"
-  type = "text"
+  type = "url"
   placeholder = "Example: mystore.com"
+
 [[params.slides]]
   slideType = "view"
   view = "slide-views/login-shopify.html"
+
 [[params.slides]]
   slideType = "input"
   title = "Total Revenue"
   name = "entry.1591179306"
   type = "text"
   placeholder = "Your Answer"
+
 [[params.slides]]
   slideType = "input"
   title = "Total Adspend"
   name = "entry.1006791840"
   type = "text"
   placeholder = "Your Answer"
+  
 [[params.slides]]
   slideType = "input"
   title = "Sessions"
   name = "entry.1168260182"
   type = "text"
   placeholder = "Your Answer"
+
 [[params.slides]]
   slideType = "input"
   title = "Add to Chart"
   name = "entry.745973099"
   type = "text"
   placeholder = "Your Answer"
+
 [[params.slides]]
   slideType = "input"
   title = "Reached Checkout"
   name = "entry.1531030102"
   type = "text"
   placeholder = "Your answer"
+  
 [[params.slides]]
   slideType = "input"
   title = "Sessions Converted"
   name = "entry.843800738"
   type = "text"
   placeholder = "Your answer"
+
 [[params.slides]]
   slideType = "input"
   title = "Returning Customer Rate"
   name = "entry.173864781"
   type = "text"
   placeholder = "Your answer"
+
 [[params.slides]]
   slideType = "view"
   view = "slide-views/login-klaviyo.html"
+
 [[params.slides]]
   slideType = "input"
   title = "Revenue from Klaviyo"
   name = "entry.1498452875"
   type = "number"
   placeholder = "Your answer"
+
 [[params.slides]]
   slideType = "input"
   title = "Revenue from Flows"
   name = "entry.754883273"
   type = "number"
   placeholder = "Your answer"
+
 [[params.slides]]
   slideType = "input"
   title = "Revenue from Campaigns"
   name = "entry.867833551"
   type = "number"
   placeholder = "Your answer"
+
 [[params.slides]]
   slideType = "input"
   title = "Email Revenue"
   name = "entry.1764438909"
   type = "number"
   placeholder = "Your answer"
+
 [[params.slides]]
   slideType = "input"
   title = "SMS Revenue"
   name = "entry.475474516"
   type = "number"
   placeholder = "Your answer"
+
 [[params.slides]]
   slideType = "view"
   view = "slide-views/signup-klaviyo.html"
+
 [[params.slides]]
   slideType = "input-radio"
   title = "Please Your Rating"
   name = "entry.272409792"
   type = "radio"
   values = ['This is very helpfull', 'Very Good', 'Good', 'Not helpful']
+
 [[params.slides]]
   slideType = "view"
   view = "slide-views/submit-view.html"

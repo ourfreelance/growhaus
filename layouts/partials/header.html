@@ -2,15 +2,19 @@
   <div class="max-w-screen-2xl mx-auto flex items-center justify-between px-5">
     <div class="flex items-center justify-between relative w-full lg:w-auto h-full lg:h-auto py-4 z-40">
       <a href="/" class="ml-5 text-xl font-medium flex items-end gap-0.5">
-        <img src="/assets/images/logo.png" alt="">
+        <img class="hidden md:block" src="/assets/images/logo.png" alt="growhaus logo">
+        <img class="block md:hidden" src="/assets/images/logo-sm.png" alt="growhaus logo">
       </a>
+      <button class="toggle-menu block md:hidden">
+        <img src="/assets/images/menu.svg" alt="menu">
+      </button>
     </div>
     <nav class="menu translate-y-[-150%] lg:translate-y-0">
       <a href="/" class="hover:text-primary transition">Home</a>
-      /
+      <span class="hidden md:block">/</span>
       <a href="/about-us" class="hover:text-primary transition">About Us</a>
-      /
-      <a href="/contact-us" class="hover:text-primary transition">Contact Us</a>
+      <span class="hidden md:block">/</span>
+      <a href="#" class="hover:text-primary transition">Contact Us</a>
     </nav>
   </div>
 </header>
