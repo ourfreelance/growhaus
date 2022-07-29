@@ -7,10 +7,11 @@
 
       <div class="swiper-wrapper">
         {{ range .Site.Params.Slides }}
-          <div class="swiper-slide !pb-[16rem] flex flex-col justify-center items-center w-full !overflow-auto !h-screen">
+          <div class="swiper-slide !pb-[16rem] md:!pb-32 flex flex-col justify-center items-center w-full !overflow-auto !h-screen">
 
             {{ if eq .slideType "input"}}
               {{ partial "components/label-input.html" (dict
+                "id" .id
                 "title" .title 
                 "name" .name 
                 "type" .type 
@@ -19,6 +20,7 @@
 
             {{ else if eq .slideType "input-radio" }}
               {{ partial "components/label-input-radio.html" (dict 
+                "id" .id
                 "title" .title 
                 "name" .name 
                 "type" .type 

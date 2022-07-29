@@ -37,6 +37,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "email"
   title = "Your Email Address"
   name = "emailAddress"
   type = "email"
@@ -44,6 +45,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "name"
   title = "Your Name"
   name = "entry.177899891"
   type = "text"
@@ -51,6 +53,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "store-url"
   title = "Store URL"
   name = "entry.87908930"
   type = "url"
@@ -62,6 +65,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "total-revenue"
   title = "Total Revenue"
   name = "entry.1591179306"
   type = "text"
@@ -69,6 +73,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "total-adspend"
   title = "Total Adspend"
   name = "entry.1006791840"
   type = "text"
@@ -76,6 +81,7 @@ pygmentsUseClasses = true
   
 [[params.slides]]
   slideType = "input"
+  id = "sessions"
   title = "Sessions"
   name = "entry.1168260182"
   type = "text"
@@ -83,6 +89,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "add-to-chart"
   title = "Add to Chart"
   name = "entry.745973099"
   type = "text"
@@ -90,6 +97,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "reached-checkout"
   title = "Reached Checkout"
   name = "entry.1531030102"
   type = "text"
@@ -97,6 +105,7 @@ pygmentsUseClasses = true
   
 [[params.slides]]
   slideType = "input"
+  id = "sessions-converted"
   title = "Sessions Converted"
   name = "entry.843800738"
   type = "text"
@@ -104,6 +113,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "returning-customer-rate"
   title = "Returning Customer Rate"
   name = "entry.173864781"
   type = "text"
@@ -115,6 +125,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "revenue-form-klaviyo"
   title = "Revenue from Klaviyo"
   name = "entry.1498452875"
   type = "number"
@@ -122,6 +133,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "revenue-from-flows"
   title = "Revenue from Flows"
   name = "entry.754883273"
   type = "number"
@@ -129,6 +141,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "revenue-from-campaigns"
   title = "Revenue from Campaigns"
   name = "entry.867833551"
   type = "number"
@@ -136,6 +149,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "email-revenue"
   title = "Email Revenue"
   name = "entry.1764438909"
   type = "number"
@@ -143,6 +157,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input"
+  id = "sms-revenue"
   title = "SMS Revenue"
   name = "entry.475474516"
   type = "number"
@@ -154,6 +169,7 @@ pygmentsUseClasses = true
 
 [[params.slides]]
   slideType = "input-radio"
+  id = "your-rating"
   title = "Please Your Rating"
   name = "entry.272409792"
   type = "radio"
