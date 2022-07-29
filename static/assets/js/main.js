@@ -94,11 +94,11 @@ swiper.on('paginationUpdate', (swiper) => {
 })
 
 // onsubmit form
-  if(formSubmitButton) {
-    formSubmitButton.addEventListener('click', () => {
-      thanksForSubmit.classList.remove('!hidden')
-    })
-  }
+if(formSubmitButton) {
+  formSubmitButton.addEventListener('click', () => {
+    thanksForSubmit.classList.remove('!hidden')
+  })
+}
 
 let emailErrorText = "there's must be valid email"
 let urlErrorText = "there's must be valid url"
