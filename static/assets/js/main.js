@@ -14,6 +14,11 @@ const toggleMenu = document.querySelector('.toggle-menu')
 const menuIcon = toggleMenu.querySelector('img')
 const menu = document.querySelector('.menu')
 
+// Toggle Menu
+toggleMenu.addEventListener('click', () => {
+  menu.classList.toggle('translate-y-[-150%]')
+  menuIcon.src = menu.classList.contains('translate-y-[-150%]') ? '/assets/images/menu.svg' : '/assets/images/menu-close.svg'
+})
 
 const swiper = new Swiper('.swiper-form', {
   allowTouchMove: false,
@@ -65,10 +70,12 @@ swiper.on('slideChange', function () {
 
 
 // pagination style logic
-if(swiper.activeIndex === 0 ) {
-  paginationForm.style.opacity = '0'
-} else {
-  paginationForm.style.opacity = '100'
+if(paginationForm){
+  if(swiper.activeIndex === 0 ) {
+    paginationForm.style.opacity = '0'
+  } else {
+    paginationForm.style.opacity = '100'
+  }  
 }
 
 swiper.on('paginationUpdate', (swiper) => {
@@ -87,24 +94,16 @@ swiper.on('paginationUpdate', (swiper) => {
 })
 
 // onsubmit form
-formSubmitButton.addEventListener('click', () => {
-  thanksForSubmit.classList.remove('!hidden')
-})
-
-// Toggle Menu
-toggleMenu.addEventListener('click', () => {
-  menu.classList.toggle('translate-y-[-150%]')
-  menuIcon.src = menu.classList.contains('translate-y-[-150%]') ? '/assets/images/menu.svg' : '/assets/images/menu-close.svg'
-})
-
+  if(formSubmitButton) {
+    formSubmitButton.addEventListener('click', () => {
+      thanksForSubmit.classList.remove('!hidden')
+    })
+  }
 
 let emailErrorText = "there's must be valid email"
 let urlErrorText = "there's must be valid url"
 
 formInputs.forEach(input => {
-  
-
-
   input.addEventListener('input', e => {
 
     // check required
@@ -158,6 +157,6 @@ function isInputValid(el, condition) {
 }
 
 function validateUrl(value) {
-  const res = value.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+  const res = value.match(/(http(s?):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
   return (res !== null)
 };
