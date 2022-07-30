@@ -41,8 +41,8 @@
 }
 
 .swiper-navigation-form.desktop {
-  @apply absolute top-1/2 -translate-y-1/2 z-50 hover:opacity-90 active:bg-secondary/[0.02] rounded-full overflow-hidden p-2 text-primary
+  @apply absolute top-1/2 -translate-y-1/2 z-50 hover:opacity-90 active:bg-secondary/[0.02] rounded-full overflow-hidden p-2 text-primary cursor-pointer
 }
 .swiper-navigation-form.mobile {
-  @apply hover:opacity-90 active:bg-secondary/[0.02] rounded-full overflow-hidden p-2 text-primary
+  @apply hover:opacity-90 active:bg-secondary/[0.02] rounded-full overflow-hidden p-2 text-primary cursor-pointer
 }
