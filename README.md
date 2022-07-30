@@ -56,27 +56,27 @@ open and change config.toml
 add slide input
 ```
 [[params.slides]]
-  slideType = "input" // type of slide - "input" | "input-radio" | "view"
-  id = "your-id" // id of input
-  title = "Input Title" // title of input
-  name = "input-name" // name of input
-  type = "text" // type of input
+  slideType = "input" # type of slide - "input" | "input-radio" | "view"
+  id = "your-id" # id of input
+  title = "Input Title" # title of input
+  name = "input-name" # name of input
+  type = "text" # type of input
 ```
 
 add slide radio input
 ```
 [[params.slides]]
-  slideType = "input-radio" // type of slide - "input" | "input-radio" | "view"
-  id = "your-id" // id of input
-  title = "Input Title" // title of input
-  name = "input-name" // name of input
-  type = "text" // type of input
-  values = ['This is very helpful', 'Very Good', 'Good', 'Not helpful'] // values of radio input
+  slideType = "input-radio" # type of slide - "input" | "input-radio" | "view"
+  id = "your-id" # id of input
+  title = "Input Title" # title of input
+  name = "input-name" # name of input
+  type = "text" # type of input
+  values = ["value 1", "value 2", "value 3"] # values of radio input
 ```
 
 add slide custom view
 ```
 [[params.slides]]
-  slideType = "view" // type of slide - "input" | "input-radio" | "view"
-  view = "slide-views/submit-view.html" // custom view - the view must on folder "partials"
+  slideType = "view" # type of slide - "input" | "input-radio" | "view"
+  view = "slide-views/submit-view.html" # custom view - the view must on folder "partials"
 ```
