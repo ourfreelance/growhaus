@@ -1,6 +1,6 @@
 {{ define "main" }}
   <iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
-  <form id="form" class="h-screen relative" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" target="hidden_iframe">
+  <form id="form" class="h-screen relative" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" target="hidden_iframe" onkeydown="return event.key != 'Enter';">
 
     <!-- Slider main container -->
     <section class="swiper swiper-form">
