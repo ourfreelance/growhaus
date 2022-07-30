@@ -7,9 +7,9 @@
     {{ $name := .name }}
     {{ $type := .type }}
     {{ range $index, $value := .values }}
-      <label label="{{ $id }}-{{ $index }}" class="block cursor-pointer">
+      <label for="{{ $id }}-{{ $index }}" class="block ">
         <input id="{{ $id }}-{{ $index }}" name="{{ $name }}" type="{{ $type }}" class="hidden peer" value="{{ $value }}" {{ if eq $index 0 }} checked {{end}}>
-        <div class="block px-4 py-2 rounded-md bg-white border border-primary-gray peer-checked:border-primary">
+        <div class="block px-4 py-2 rounded-md bg-white border border-primary-gray peer-checked:border-primary cursor-pointer select-none" style="user-select: none;">
           {{ $value }}
         </div>
       </label>
