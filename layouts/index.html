@@ -10,7 +10,7 @@
           <div class="swiper-slide flex flex-col justify-center items-center w-full">
 
             {{ if eq .slideType "input"}}
-              <div class="slide-body !pb-[16rem] pt-64 w-full overflow-auto">
+              <div class="slide-body pt-64 w-full overflow-auto">
                 {{ partial "components/label-input.html" (dict
                   "id" .id
                   "title" .title 
@@ -21,7 +21,7 @@
               </div>
 
             {{ else if eq .slideType "input-radio" }}
-              <div class="slide-body !pb-[16rem] pt-64 w-full overflow-auto">
+              <div class="slide-body pt-64 w-full overflow-auto">
                 {{ partial "components/label-input-radio.html" (dict 
                 "id" .id
                 "title" .title 
