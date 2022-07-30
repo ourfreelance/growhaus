@@ -5,16 +5,16 @@
         <img class="hidden md:block" src="/assets/images/logo.png" alt="growhaus logo">
         <img class="block md:hidden" src="/assets/images/logo-sm.png" alt="growhaus logo">
       </a>
-      <button class="toggle-menu block md:hidden">
+      <div class="toggle-menu block md:hidden">
         <img src="/assets/images/menu.svg" alt="menu">
-      </button>
+      </div>
     </div>
     <nav class="menu translate-y-[-150%] lg:translate-y-0">
       <a href="/" class="hover:text-primary transition">Home</a>
       <span class="hidden md:block">/</span>
       <a href="/about-us" class="hover:text-primary transition">About Us</a>
       <span class="hidden md:block">/</span>
-      <a href="#" class="hover:text-primary transition">Contact Us</a>
+      <a href="{{ .Site.Params.Contact_url}}" class="hover:text-primary transition" target="_blank">Contact Us</a>
     </nav>
   </div>
 </header>
