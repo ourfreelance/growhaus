@@ -23,6 +23,12 @@ if(iframeTarget) {
   }
 }
 
+const slideBody = document.querySelectorAll('.slide-body')
+
+slideBody.forEach(slide => {
+  slide.style.height = (window.innerHeight-244)+'px'
+})
+
 // Toggle Menu
 toggleMenu.addEventListener('click', () => {
   menu.classList.toggle('translate-y-[-150%]')
