@@ -7,12 +7,21 @@ const slideNextButtons = document.querySelectorAll('.swiper-navigation-form.swip
 
 const paginationForm = document.querySelector('.swiper-pagination-form')
 
-const thanksForSubmit = document.querySelector('#thanks-for-submit')
-const formSubmitButton = document.querySelector('.form-submit-button')
-
 const toggleMenu = document.querySelector('.toggle-menu')
 const menuIcon = toggleMenu.querySelector('img')
 const menu = document.querySelector('.menu')
+
+const iframeTarget = document.querySelector('#hidden_iframe')
+
+if(iframeTarget) {
+  iframeTarget.onerror = function() {
+    console.log();
+  }
+
+  iframeTarget.onload = function () {
+    window.location.href = '/submit-success'
+  }
+}
 
 // Toggle Menu
 toggleMenu.addEventListener('click', () => {
@@ -92,13 +101,6 @@ swiper.on('paginationUpdate', (swiper) => {
     }
   })
 })
-
-// onsubmit form
-if(formSubmitButton) {
-  formSubmitButton.addEventListener('click', () => {
-    thanksForSubmit.classList.remove('!hidden')
-  })
-}
 
 let emailErrorText = "there's must be valid email"
 let urlErrorText = "there's must be valid url"
