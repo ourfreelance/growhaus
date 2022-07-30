@@ -1,13 +1,13 @@
 {{ define "main" }}
   <iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
-  <form id="form" class="h-screen relative" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" target="hidden_iframe" onkeydown="return event.key != 'Enter';">
+  <form id="form" class="h-screen relative" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" target="hidden_iframe">
 
     <!-- Slider main container -->
     <section class="swiper swiper-form">
 
-      <div class="swiper-wrapper !h-[calc(100vh-244px)]">
+      <div class="swiper-wrapper">
         {{ range .Site.Params.Slides }}
-          <div class="swiper-slide !pt-16 !pb-5 flex flex-col justify-center items-center w-full !overflow-auto h-full">
+          <div class="swiper-slide !pb-[16rem] md:!pb-32 flex flex-col justify-center items-center w-full !overflow-auto !h-screen">
 
             {{ if eq .slideType "input"}}
               {{ partial "components/label-input.html" (dict
@@ -38,17 +38,15 @@
 
       {{ partial "components/slide-navigation.html" (dict "type" "desktop") }}
 
-      <div class="w-full h-[244px]">
-        <div class="w-full flex items-center justify-center "> 
+      <div class="fixed bottom-0 left-0 w-full  z-50">
+        <div class="w-full flex items-center justify-center bg-primary-white"> 
           {{ partial "components/slide-navigation.html" (dict "type" "mobile") }}
         </div>
         <div class="px-0 md:px-10">
-          <div class="swiper-pagination-form max-w-screen-lg mx-auto "></div>
+          <div class="swiper-pagination-form max-w-screen-lg mx-auto bg-primary-white"></div>
         </div>
       </div>
     </section>  
-
-    
 
   </form>
   
