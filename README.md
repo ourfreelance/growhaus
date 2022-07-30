@@ -66,7 +66,7 @@ add slide input
 add slide radio input
 ```
 [[params.slides]]
-  slideType = "input" // type of slide - "input" | "input-radio" | "view"
+  slideType = "input-radio" // type of slide - "input" | "input-radio" | "view"
   id = "your-id" // id of input
   title = "Input Title" // title of input
   name = "input-name" // name of input
