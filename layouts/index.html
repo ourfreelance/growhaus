@@ -1,35 +1,38 @@
 {{ define "main" }}
   <iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
-  <form id="form" class="h-screen relative" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" target="hidden_iframe" onkeydown="return event.key != 'Enter';">
+  <form id="form" class="relative" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfETnmATfkWTr0XrWKATYt4aV9qyAYSAuoFUz0J2iACnpzhRg/formResponse" target="hidden_iframe" onkeydown="return event.key != 'Enter';">
 
     <!-- Slider main container -->
     <section class="swiper swiper-form">
 
       <div class="swiper-wrapper">
         {{ range .Site.Params.Slides }}
-          <div class="swiper-slide !pb-[16rem] md:!pb-32 flex flex-col justify-center items-center w-full !overflow-auto !h-screen">
+          <div class="swiper-slide flex flex-col justify-center items-center w-full !overflow-auto">
 
             {{ if eq .slideType "input"}}
-              {{ partial "components/label-input.html" (dict
-                "id" .id
-                "title" .title 
-                "name" .name 
-                "type" .type 
-                "placeholder" .placeholder 
-              )}}
+              <div class="!pb-[16rem] pt-64 w-full">
+                {{ partial "components/label-input.html" (dict
+                  "id" .id
+                  "title" .title 
+                  "name" .name 
+                  "type" .type 
+                  "placeholder" .placeholder 
+                )}}
+              </div>
 
             {{ else if eq .slideType "input-radio" }}
+            <div class="!pb-[16rem] pt-64 w-full">
               {{ partial "components/label-input-radio.html" (dict 
-                "id" .id
-                "title" .title 
-                "name" .name 
-                "type" .type 
-                "values" .values
+              "id" .id
+              "title" .title 
+              "name" .name 
+              "type" .type 
+              "values" .values
               )}}
+            </div>
 
             {{ else if eq .slideType "view" }}
               {{ partial .view }}
-
             {{ end }}
             
           </div>
