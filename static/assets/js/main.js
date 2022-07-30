@@ -48,11 +48,11 @@ const swiper = new Swiper('.swiper-form', {
     clickable: true,
     renderBullet: function (index, className) {
       return index === 0
-        ? `<button type="button" class="${className} hidden"></button>`
-        : `<button type="button" class="${className}">
+        ? `<div class="${className} hidden cursor-pointer"></div>`
+        : `<div class="${className} cursor-pointer flex justify-center items-center">
               <span class="hidden md:block">Step ${index} - ${this.slides.length  - 1}</span>
               <span class="block md:hidden">${index}</span>
-            </button>`
+            </div>`
     },
   },
 })
